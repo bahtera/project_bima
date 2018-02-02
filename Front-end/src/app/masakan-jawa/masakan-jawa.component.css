@@ -1,0 +1,210 @@
+.menu {
+    border-top: 2px solid rgb(165, 164, 164);
+    border-bottom: 2px solid rgb(165, 164, 164);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Header */
+
+.page-header {
+    padding-bottom: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.page-header img{
+    padding-bottom: 0px;
+    margin: 30px 0 40px;
+    border: none;
+}
+
+/* Kategori */
+
+.kategori img{
+    margin: 30px 0 30px;
+}
+
+
+/*navbar */
+
+.navbar-default {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: none;
+    border-left: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-radius: 0px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: gray;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(250, 175, 64);
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: rgb(250, 175, 64);
+    background-color: white;
+}
+
+.login {
+    background-color: transparent;
+    color: white;
+}
+
+.login:hover {
+    color: white;
+    background-color: #212437;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+/* Dropdown */
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: rgb(250, 175, 64);
+    text-decoration: none;
+    background-color: white;
+}
+
+
+/* Content */
+.judul-resep{
+    font-size: 32px;
+    /* font-family: Cambria; */
+    font-family: 'Alegreya Sans', sans-serif;
+    /* position: relative; */
+}
+
+.judul-resep a{
+    text-decoration: none;
+    color: gray;
+    /* font-family: Cambria; */
+    /* font-family: 'Alegreya Sans', sans-serif; */
+    /* position: relative; */
+}
+
+.judul-resep a:focus,
+.judul-resep a:hover{
+    text-decoration: none;
+    color: rgb(250, 175, 64);
+    /* font-family: Cambria; */
+    /* font-family: 'Alegreya Sans', sans-serif; */
+    /* position: relative; */
+}
+
+/* Label */
+.kategori-gambar{
+    position : relative;
+    left:-15px;
+    top: 295px;
+    width : 345px;
+    height : 50px;
+    background-color : rgb(250, 175, 64);
+    padding-top : 10px;
+}
+
+.kategori-gambar p{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.judul-gambar {
+    /* 
+    CSS Untuk croping gambar / foto 
+
+    Disini Anda dapat menentukan lebar dan tinggi image
+    */
+    width: 345px;
+    height: 345px;
+    overflow: hidden;
+
+    /* 
+    CSS Untuk mengatur posisi gambar 
+    Menjadikan frame / bingkai sebagai patokan koordinat left/top
+    */
+    position: relative;
+}
+
+.judul-gambar img {
+    /*
+    CSS Untuk croping gambar
+    Membatasi tinggi gambar, membiarkan width-nya auto
+    Bisa juga diganti jadi height: 320px jika tinggi gambar mau dipaksakan jadi 320px
+    */
+    height: 345px;
+
+    /* 
+    CSS Untuk mengatur posisi gambar 
+    Left/top berpatokan pada frame
+    Diisi dengan nilai minus untuk memposisikan keluar dari frame
+    karena frame overflow-nya dibuat jadi hidden
+    posisi yg keluar area frame jadi tidak terlihat
+
+    Disini Anda dapat mengatur bagian/posisi gambar yg mana yg akan ditampilkan
+    */
+    position: absolute;
+    left: -10px;
+}
+
+/* Recent post */
+.recent-gambar {
+    width: 100px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.recent-gambar img {
+    
+    height: 100px;
+
+    position: absolute;
+    left: -10px;
+}
+/* Content */
+.judul-recent{
+    font-size: 16px;
+    /* font-family: Cambria; */
+    font-family: 'Alegreya Sans', sans-serif;
+    /* position: relative; */
+}
+
+.judul-recent a{
+    text-decoration: none;
+    color: rgb(60, 60, 60);
+    /* font-family: Cambria; */
+    /* font-family: 'Alegreya Sans', sans-serif; */
+    /* position: relative; */
+}
+
+.judul-recent a:focus,
+.judul-recent a:hover{
+    text-decoration: none;
+    color: rgb(250, 175, 64);
+    /* font-family: Cambria; */
+    /* font-family: 'Alegreya Sans', sans-serif; */
+    /* position: relative; */
+}
+
+/* Footer */
+.footer{
+    background-color: white;
+    padding: 15px 0 5px;
+    border-top: 1px solid #eee;
+}

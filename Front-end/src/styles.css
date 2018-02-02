@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* CSS Admin */
+/* #left-menu {
+	width: 15%;
+	float: left;
+	font-family: arial, verdana, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #06F;
+	/* height: 480px; */
+/* } */
+
+#left-menu {
+	width: 15%;
+	float: left;
+	font-family: arial, verdana, sans-serif;
+	font-size: 14px;
+	/* font-weight: bold; */
+	background-color: #f8f8f8;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+}
+/* 
+.footer{
+    background-color: #f8f8f8;
+    padding-top: 10px;
+    border: 1px solid #e7e7e7;
+} */
+
+#left-menu ul {
+	list-style: none;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#left-menu li a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	display: block;
+	background-color: #f8f8f8;
+	padding: 15px;
+	border-radius: 5px;
+}
+
+#left-menu li a:hover {
+	background-color: #e7e7e7;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+}
+
+#left-menu ul li.highlight a{
+	color: rgb(0, 0, 0);
+	background-color: #e7e7e7;
+	border-radius: 5px;
+}

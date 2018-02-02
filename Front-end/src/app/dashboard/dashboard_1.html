@@ -1,0 +1,104 @@
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid col-md-8 col-md-offset-2">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#">Brand</a> -->
+            </div>
+                    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a routerLink="">Home<span class="sr-only">(current)</span></a></li>
+              <!-- <li><a  routerLink="/add">Add</a></li>                 -->
+            </ul>            
+            <form class="navbar-form navbar-right">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Search</button>
+                </span>
+              </div>
+            </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  
+  <div id="admin-content">
+    <div id="left-menu">
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/add">Tambah Resep</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>  
+    </div>
+  </div>
+  
+  <!-- <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="margin-top : 50px;"> -->
+  <div class="col-xs-10">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Daftar Resep Masakan</h3>
+      </div>
+      <div class="form-group" style="margin-top: 20px; margin-bottom: 60px;">
+        <label class="col-sm-2">Kategori</label>
+        <div class="col-sm-8">
+          <!-- <input type="text" class="form-control" placeholder="Enter your Address" name="address" ngModel> -->
+          <select class="form-control" name="kategori" [(ngModel)]="kategori">
+            <option value="Semua">Tampilkan Semua</option>
+            <option value="Sumatera">Sumatera dan Sekitarnya</option>
+            <option value="Jawa">Jawa, Madura dan Sekitarnya</option>
+            <option value="Kalimantan">Kalimantan dan Sekitarnya</option>
+            <option value="Sulawesi">Sulawesi dan Sekitarnya</option>
+            <option value="Maluku">Maluku dan Sekitarnya</option>
+            <option value="Bali">Bali, Nusa Tenggara dan Sekitarnya</option>
+            <option value="Papua">Papua dan Sekitarnya</option>
+          </select> 
+        </div>
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-primary" (click)="CariResep()">Cari</button>
+        </div>
+      </div>
+      
+      <div class="panel-body">
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th></th>
+            <th>Judul</th>
+            <th>Kategori</th>
+            <th></th>
+          </tr>
+          
+          <tr *ngFor="let r of resepList, let i = index">
+  
+            <td>
+              <img src="{{ r.gambar }}" alt="gambar" class="img-responsive img-circle" style="max-height: 100px; max-width: 100px;" >
+            </td>
+            <td>{{ r.judul }}</td>
+            <td>{{ r.kategori }}</td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="DeleteResepData(r._id)" >
+                <span class="glyphicon glyphicon-trash"></span> Delete
+              </button>
+              <a [routerLink]="['/view', r._id]">Show Detail</a>
+              <a [routerLink]="['/resep-edit', r._id]" class="btn btn-success">EDIT</a>
+            </td>
+  
+          </tr>
+  
+        </table>
+      </div>
+    </div>
+    
+  </div>
+  
+  

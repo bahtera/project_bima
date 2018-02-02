@@ -1,0 +1,126 @@
+<body>
+    <nav class="navbar navbar-default" style="padding: 0px;">
+        <div class="container-fluid">            
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a routerLink="/dashboard">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <div class="page-header" align="center">
+            <img src="../../assets/gambar/logo.png" alt="">
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a routerLink="/">HOME</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KATEGORI
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a routerLink="/masakan-sumatera">SUMATERA DAN SEKITARNYA</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a routerLink="/masakan-jawa">JAWA, MADURA, DAN SEKITARNYA</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a routerLink="/masakan-kalimantan">KALIMANTAN DAN SEKITARNYA</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a routerLink="/masakan-sulawesi">SULAWESI DAN SEKITARNYA</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a routerLink="/masakan-bali-nusra">BALI, NUSRA DAN SEKITARNYA</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a routerLink="/masakan-maluku">MALUKU DAN SEKITARNYA</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a routerLink="/masakan-papua">PAPUA DAN SEKITARNYA</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <form class="navbar-form navbar-left">
+                          <div class="form-group has-feedback">
+                              <input type="text" class="form-control" placeholder="Search" style="border-radius: 20px;" />
+                              <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                          </div>
+                      </form>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <div class="col-xs-12 col-md-8">
+            <div class="col-xs-12 col-md-12">
+                <p class="judul-resep-view" align="center">{{ dataresep.judul }}</p>
+                <p style="margin-bottom : 50px;" align="center">Oleh : {{ dataresep.penulis }}</p>
+                <!-- <p class="isi">Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.</p> -->
+            </div>
+            <div class="judul-gambar col-xs-12 col-md-12">
+                <img src="{{ dataresep.gambar }}" alt="">
+                <!-- <div style="position : relative; left:-16px; top:310px; width : 360px; height : 50px; border : 2px solid black; background-color : rgb(250, 175, 64); border: 2px solid black;"><p style="text-align: center; font-size: 18px; font-weight: bold; margin-top: 10px;">Sumatera dan Sekitarnya</p></div> -->
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <!-- <p class="judul-resep">Makanan Sumatera</p> -->
+                <p class="isi-view">{{ dataresep.resep }}</p>
+            </div>
+        </div>       
+        <div class="col-xs-12 col-md-4" style="float: right">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Recent Post</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-12" *ngFor="let r of resepList; let i=index;"> 
+                        <div class="col-xs-5 recent-gambar" style="margin-bottom: 20px;" *ngIf="i<5">
+                            <a [routerLink]="['/view', r._id]"><img src="{{ r.gambar }}" alt=""></a>
+                        </div>
+                        <div *ngIf="i<5">
+                            <p class="col-xs-7"><a [routerLink]="['/view', r._id]">{{ r.judul }}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer col-xs-12">
+        <p style="text-align: center;">&copy;Bima Bahtera</p>
+    </div>
+</body>

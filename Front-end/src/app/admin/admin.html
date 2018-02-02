@@ -1,0 +1,105 @@
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid col-md-8 col-md-offset-2">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#">Brand</a> -->
+            </div>
+                    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a routerLink="">Home<span class="sr-only">(current)</span></a></li>
+              <!-- <li><a  routerLink="/add">Add</a></li>                 -->
+            </ul>            
+            <form class="navbar-form navbar-right">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Search</button>
+                </span>
+              </div>
+            </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  
+  <div id="admin-content">
+    <div id="left-menu">
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/add">Tambah Resep</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>  
+    </div>
+  </div>
+  
+  <!-- <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="margin-top : 50px;"> -->
+  <div class="col-xs-10">
+  
+    <form #f="ngForm" (ngSubmit)="SaveEmployeeData(f)" class="form-horizontal" >
+  
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Tambah Admin</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="col-xs-3">Nama</label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control" name="nama" ngModel >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-3">Username</label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control" name="username" ngModel >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-3">Password</label>
+            <div class="col-xs-9">
+              <input type="password" class="form-control" name="password" ngModel >
+            </div>
+          </div>
+          <button type="submit" class="btn btn-default pull-right" >Simpan</button>
+        </div>
+      </div>
+  
+    </form>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Daftar Admin</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Nama</th>
+            <th>Username</th>
+            <th></th>
+          </tr>
+          
+          <tr *ngFor="let e of employeeList, let i = index">
+            <td>{{ e.nama }}</td>
+            <td>{{ e.username }}</td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="DeleteEmployeeData(e._id)" >
+                <span class="glyphicon glyphicon-trash"></span> Delete
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+  

@@ -1,0 +1,204 @@
+/* .judul p{
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+
+.menu {
+    border-top: 2px solid rgb(165, 164, 164);
+    border-bottom: 2px solid rgb(165, 164, 164);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Header */
+
+.page-header {
+    padding-bottom: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.page-header img{
+    padding-bottom: 0px;
+    margin: 30px 0 40px;
+    border: none;
+}
+
+/* Kategori */
+
+.kategori img{
+    margin: 30px 0 30px;
+}
+
+/*navbar */
+
+.navbar-default {
+    border-top: 1px solid  #eee;
+    border-bottom: 1px solid #eee;
+    border-right: none;
+    border-left: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-radius: 0px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: gray;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(250, 175, 64);
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: rgb(250, 175, 64);
+    background-color: white;
+}
+
+.login {
+    background-color: transparent;
+    color: white;
+}
+
+.login:hover {
+    color: white;
+    background-color: #212437;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+
+
+/* Menu atas */
+
+.navbar-default-top {
+    border-bottom: 1px solid #eee;
+    /* padding-top: 10px; */
+    background-color: white;
+    border-radius: 0px;
+}
+
+.navbar-default-top .navbar-nav>li>a {
+    color: black;
+}
+
+.navbar-default-top .navbar-nav>li>a:hover {
+    color: black;
+}
+
+.navbar-default-top .navbar-nav>.open>a,
+.navbar-default-top .navbar-nav>.open>a:hover,
+.navbar-default-top .navbar-nav>.open>a:focus {
+    color: white;
+    background-color: #18bc9c;
+}
+
+.login {
+    background-color: transparent;
+    color: white;
+}
+
+.login:hover {
+    color: white;
+    background-color: #212437;
+}
+
+.navbar-default-top .navbar-toggle:hover,
+.navbar-default-top .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+/* Dropdown */
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: rgb(250, 175, 64);
+    text-decoration: none;
+    background-color: white;
+}
+
+
+/* Content */
+
+.judul-resep{
+    font-size: 22px;
+    /* font-family: Cambria; */
+    font-family: 'Alegreya Sans', sans-serif;
+    /* position: relative; */
+}
+
+.judul-resep a{
+    text-decoration: none;
+    color: gray;
+    /* font-family: Cambria; */
+    /* font-family: 'Alegreya Sans', sans-serif; */
+    /* position: relative; */
+}
+
+.judul-resep a:focus,
+.judul-resep a:hover{
+    text-decoration: none;
+    color: rgb(250, 175, 64);
+    /* font-family: Cambria; */
+    /* font-family: 'Alegreya Sans', sans-serif; */
+    /* position: relative; */
+}
+
+.isi{
+    font-family: "Work Sans", sans-serif;
+}
+
+
+.judul-gambar {
+    /* 
+    CSS Untuk croping gambar / foto 
+
+    Disini Anda dapat menentukan lebar dan tinggi image
+    */
+    width: 330px;
+    height: 330px;
+    overflow: hidden;
+
+    /* 
+    CSS Untuk mengatur posisi gambar 
+    Menjadikan frame / bingkai sebagai patokan koordinat left/top
+    */
+    position: relative;
+}
+
+.judul-gambar img {
+    /*
+    CSS Untuk croping gambar
+    Membatasi tinggi gambar, membiarkan width-nya auto
+    Bisa juga diganti jadi height: 320px jika tinggi gambar mau dipaksakan jadi 320px
+    */
+    height: 360px;
+
+    /* 
+    CSS Untuk mengatur posisi gambar 
+    Left/top berpatokan pada frame
+    Diisi dengan nilai minus untuk memposisikan keluar dari frame
+    karena frame overflow-nya dibuat jadi hidden
+    posisi yg keluar area frame jadi tidak terlihat
+
+    Disini Anda dapat mengatur bagian/posisi gambar yg mana yg akan ditampilkan
+    */
+    position: absolute;
+    left: -10px;
+}
+
+/* Footer */
+.footer{
+    background-color: white;
+    padding: 15px 0 5px;
+    border-top: 1px solid #eee;
+}

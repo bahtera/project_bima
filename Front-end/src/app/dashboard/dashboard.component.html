@@ -1,0 +1,201 @@
+    <body class="fixed-left">
+        
+        <!-- Begin page -->
+        <div id="wrapper">
+        
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a routerLink="/" class="logo"> <span>Resep Masakan </span></a>
+                    </div>
+                </div>
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="">
+                            <div class="pull-left">
+                                <button class="button-menu-mobile open-left">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+                            <form class="navbar-form pull-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search-bar" placeholder="Type here for search...">
+                                </div>
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </form>
+
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                                
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ fotoAdmin }}" alt="user-img" class="img-circle"> </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a routerLink="/profile"><i class="md md-face-unlock"></i> Profile</a></li>
+                                        <li><a [routerLink]="['/admin-edit', id]"><i class="md md-settings"></i> Edit</a></li>
+                                        <li><a routerLink="/logout"><i class="md md-settings-power"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+                    <div class="user-details">
+                        <div class="pull-left">
+                            <img src="{{ fotoAdmin }}" alt="" class="thumb-md img-circle">
+                        </div>
+                        <div class="user-info">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{namaAdmin}} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a routerLink="/profile"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
+                                    <li><a [routerLink]="['/admin-edit', id]"><i class="md md-settings"></i> Edit</a></li>
+                                    <li><a routerLink="/logout"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-muted m-0">{{ username }}</p>
+                        </div>
+                    </div>
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a routerLink="/dashboard" class="waves-effect active"><i class="md-account-balance"></i><span> Dashboard </span></a>
+                            </li>                          
+                            
+
+                            <li>
+                                <a routerLink="/add" class="waves-effect"><i class="md md-palette"></i> <span> Tambah Resep </span></a>
+                                
+                            </li>
+
+                            
+                            <li>
+                                <a routerLink="/admin" class="waves-effect"><i class="md md-view-list"></i><span> Daftar Admin </span></a>
+                                
+                            </li>
+
+                            <li>
+                                <a routerLink="/" class="waves-effect"><i class="md md-home"></i><span> Home </span></a>
+                            </li>
+                            
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Left Sidebar End --> 
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="pull-left page-title">Dashboard</h4>
+                                <!-- <ol class="breadcrumb pull-right">
+                                    <li><a href="#">Moltran</a></li>
+                                    <li><a href="#">Data Tables</a></li>
+                                    <li class="active">Basic Tables</li>
+                                </ol> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Daftar Resep</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Input Select</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" name="kategori" [(ngModel)]="kategori">
+                                                        <option value="Semua">Tampilkan Semua</option>
+                                                        <option value="Sumatera">Sumatera dan Sekitarnya</option>
+                                                        <option value="Jawa">Jawa, Madura dan Sekitarnya</option>
+                                                        <option value="Kalimantan">Kalimantan dan Sekitarnya</option>
+                                                        <option value="Sulawesi">Sulawesi dan Sekitarnya</option>
+                                                        <option value="Maluku">Maluku dan Sekitarnya</option>
+                                                        <option value="Bali">Bali, Nusa Tenggara dan Sekitarnya</option>
+                                                        <option value="Papua">Papua dan Sekitarnya</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button type="button" class="btn btn-primary" (click)="CariResep()">Cari</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>Judul</th>
+                                                                <th>Kategori</th>
+                                                                <th>Penulis</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let r of resepList, let i = index;">
+                                                                <td>{{ i+1 }}</td>
+                                                                <td>{{ r.judul }}</td>
+                                                                <td>{{ r.kategori }}</td>
+                                                                <td>{{ r.penulis }}</td>
+                                                                <th><button type="button" class="btn btn-info waves-effect waves-light m-b-5" [routerLink]="['/view', r._id]">Lihat</button>
+                                                                    <button class="btn btn-icon waves-effect waves-light btn-warning m-b-5" [routerLink]="['/resep-edit', r._id]"> <i class="fa fa-wrench"></i> </button>
+                                                                    <button class="btn btn-icon waves-effect waves-light btn-danger m-b-5" (click)="DeleteResepData(r._id)"> <i class="fa fa-remove"></i> </button>
+                                                                </th>
+                                                            </tr>
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End row -->
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <footer class="footer text-right">
+                    2015 © Moltran.
+                </footer>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+    
+    </body>

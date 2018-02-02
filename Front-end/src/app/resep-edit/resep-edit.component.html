@@ -1,0 +1,222 @@
+
+    <body class="fixed-left">
+        
+        <!-- Begin page -->
+        <div id="wrapper">
+        
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a routerLink="/" class="logo"> <span>Resep Masakan </span></a>
+                    </div>
+                </div>
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="">
+                            <div class="pull-left">
+                                <button class="button-menu-mobile open-left">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+                            <form class="navbar-form pull-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search-bar" placeholder="Type here for search...">
+                                </div>
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </form>
+
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ fotoAdmin }}" alt="user-img" class="img-circle"> </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                                        <li><a href="javascript:void(0)"><i class="md md-settings"></i> Edit</a></li>
+                                        <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+                    <div class="user-details">
+                        <div class="pull-left">
+                            <img src="{{ fotoAdmin }}" alt="" class="thumb-md img-circle">
+                        </div>
+                        <div class="user-info">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ namaAdmin }} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings"></i> Edit</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-muted m-0">{{ username }}</p>
+                        </div>
+                    </div>
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a routerLink="/dashboard" class="waves-effect"><i class="md-account-balance"></i><span> Dashboard </span></a>
+                            </li>                          
+                            
+
+                            <li>
+                                <a routerLink="/add" class="waves-effect"><i class="md md-palette"></i> <span> Tambah Resep </span></a>
+                                
+                            </li>
+
+                            
+                            <li>
+                                <a routerLink="/admin" class="waves-effect"><i class="md md-view-list"></i><span> Daftar Admin </span></a>
+                                
+                            </li>
+
+                            <li>
+                                <a routerLink="/" class="waves-effect"><i class="md md-home"></i><span> Home </span></a>
+                            </li>
+                            
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Left Sidebar End --> 
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="pull-left page-title">Tambah Resep</h4>
+                                <!-- <ol class="breadcrumb pull-right">
+                                    <li><a href="#">Moltran</a></li>
+                                    <li><a href="#">Forms</a></li>
+                                    <li class="active">Editors</li>
+                                </ol> -->
+                            </div>
+                        </div>
+
+
+                        <!-- Form-validation -->
+                        <div class="row">
+                        
+                                <div class="col-sm-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h3 class="panel-title">Tambah Resep</h3></div>
+                                        <div class="panel-body">
+                                            <div class=" form">
+                                                <form class="cmxform form-horizontal tasi-form" id="signupForm" method="get" action="#" novalidate="novalidate" #f="ngForm" (ngSubmit)="updateResep(f)">
+                                                    <div class="form-group ">
+                                                        <label for="firstname" class="control-label col-lg-2">Judul *</label>
+                                                        <div class="col-lg-10">
+                                                            <input class=" form-control" id="firstname" name="judul" type="text" [(ngModel)]="resep.judul">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label for="lastname" class="control-label col-lg-2">Kategori  *</label>
+                                                        <div class="col-lg-10">
+                                                            <select class="form-control" name="kategori" [(ngModel)]="resep.kategori">
+                                                                <option value="Sumatera dan Sekitarnya">Sumatera dan Sekitarnya</option>
+                                                                <option value="Jawa, Madura dan Sekitarnya">Jawa, Madura dan Sekitarnya</option>
+                                                                <option value="Kalimantan dan Sekitarnya">Kalimantan dan Sekitarnya</option>
+                                                                <option value="Sulawesi dan Sekitarnya">Sulawesi dan Sekitarnya</option>
+                                                                <option value="Maluku dan Sekitarnya">Maluku dan Sekitarnya</option>
+                                                                <option value="Bali, Nusa Tenggara dan Sekitarnya">Bali, Nusa Tenggara dan Sekitarnya</option>
+                                                                <option value="Papua dan Sekitarnya">Papua dan Sekitarnya</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                                                                    
+                                                    <div class="form-group ">
+                                                        <label for="email" class="control-label col-lg-2">Resep *</label>
+                                                        <div class="col-lg-10">
+                                                            <!-- <textarea name="resep" class="wysihtml5 form-control" rows="9" ngModel></textarea> -->
+                                                            <textarea name="resep" class="form-control" rows="9" [(ngModel)]="resep.resep"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label for="email" class="control-label col-lg-2">Gambar *</label>
+                                                        <div class="col-lg-10">
+                                                            <input type="file" name="" id="" (change)="fileChange($event)">
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="form-group">
+                                                        <div class="col-lg-offset-2 col-lg-10">
+                                                            <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
+                                                            <button class="btn btn-default waves-effect" type="button" routerLink="/dashboard">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div> <!-- .form -->
+    
+                                        </div> <!-- panel-body -->
+                                    </div> <!-- panel -->
+                                </div> <!-- col -->
+                                
+    
+                            </div> <!-- End row -->
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <footer class="footer text-right">
+                    2015 © Moltran.
+                </footer>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+    
+
+        <!-- <script>
+
+            jQuery(document).ready(function(){
+                $('.wysihtml5').wysihtml5();
+
+                $('.summernote').summernote({
+                    height: 200,                 // set editor height
+
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+
+                    focus: true                 // set focus to editable area after initializing summernote
+                });
+
+            });
+        </script> -->
+
+	
+	</body>

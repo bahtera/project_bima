@@ -1,0 +1,130 @@
+<body>
+        <nav class="navbar navbar-default" style="padding: 0px;">
+            <div class="container-fluid">            
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a routerLink="/dashboard">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <div class="page-header" align="center">
+                <img src="../../assets/gambar/logo.png" alt="">
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                    </div>
+    
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a routerLink="/">HOME</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KATEGORI
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a routerLink="/masakan-sumatera">SUMATERA DAN SEKITARNYA</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a routerLink="/masakan-jawa">JAWA, MADURA, DAN SEKITARNYA</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a routerLink="/masakan-kalimantan">KALIMANTAN DAN SEKITARNYA</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a routerLink="/masakan-sulawesi">SULAWESI DAN SEKITARNYA</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a routerLink="/masakan-bali-nusra">BALI, NUSRA DAN SEKITARNYA</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a routerLink="/masakan-maluku">MALUKU DAN SEKITARNYA</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a routerLink="/masakan-papua">PAPUA DAN SEKITARNYA</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                          <form class="navbar-form navbar-left">
+                              <div class="form-group has-feedback">
+                                  <input type="text" class="form-control" placeholder="Search" style="border-radius: 20px;" />
+                                  <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                              </div>
+                          </form>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    
+        <!-- Judul Kategori -->
+        <div class="kategori col-xs-12 col-md-10 col-md-offset-1" align="center">
+            <!-- <p style="border:1px solid black; text-align: center; font-size: 30px; margin-top: 40px; margin-bottom: 50px;">Sumatera dan Sekitarnya</p> -->
+            <img src="../../assets/gambar/maluku.jpg" alt="" srcset="">
+        </div>
+    
+        <!-- Konten -->
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <!-- Recent Post -->
+            <div class="col-xs-12 col-md-4" style="float: right">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Recent Post</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12" *ngFor="let r of resepList; let i=index;"> 
+                            <div class="col-xs-5 recent-gambar" style="margin-bottom: 20px;" *ngIf="i<5">
+                                <a [routerLink]="['/view', r._id]"><img src="{{ r.gambar }}" alt=""></a>
+                            </div>
+                            <div *ngIf="i<5">
+                                <p class="col-xs-7"><a [routerLink]="['/view', r._id]">{{ r.judul }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Content -->
+            <div class="col-xs-12 col-md-8" *ngFor="let r of resepList" style="margin-bottom: 50px;">
+                <div class="judul-gambar col-xs-12 col-md-6" >
+                    <img src="{{ r.gambar }}" alt="">
+                    <div class="kategori-gambar"><p>{{ r.kategori }}</p></div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p class="judul-resep"><a [routerLink]="['/view', r._id]">{{ r.judul }}</a></p>
+                    <p>Oleh : {{ r.penulis }}</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer col-xs-12">
+            <p style="text-align: center;">&copy;Bima Bahtera</p>
+        </div>
+    </body>

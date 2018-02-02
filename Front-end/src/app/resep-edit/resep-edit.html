@@ -1,0 +1,95 @@
+<div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid col-md-8 col-md-offset-2">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a routerLink="">Home</a></li>
+                    <!-- <li class="active"><a  routerLink="/add">Add<span class="sr-only">(current)</span></a></li> -->
+                    
+                </ul>
+                <form class="navbar-form navbar-right">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Search</button>
+                    </span>
+                  </div>
+                </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+      
+      <div id="admin-content">
+        <div id="left-menu">
+          <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/add">Tambah Resep</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="logout.php">Logout</a></li>
+          </ul>  
+        </div>
+      </div>
+      
+      <div class="panel-body col-xs-10">
+      
+        <!-- <form class="form-horizontal" #f="ngForm" (ngSubmit)=onSubmit(f)> -->
+        <form #f="ngForm" (ngSubmit)="updateResep(resep._id)" class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2">Judul</label>
+              <div class="col-sm-10">
+                <!-- <input type="text" class="form-control" placeholder="" name="judul" ngModel> -->
+                <input type="text" class="form-control" placeholder="" [(ngModel)]="resep.judul" name="judul" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2">Kategori</label>
+              <div class="col-sm-10">
+                <!-- <input type="text" class="form-control" placeholder="Enter your Address" name="address" ngModel> -->
+                <select class="form-control" name="kategori" [(ngModel)]="resep.kategori">
+                  <option value="Sumatera dan Sekitarnya">Sumatera dan Sekitarnya</option>
+                  <option value="Jawa, Madura dan Sekitarnya">Jawa, Madura dan Sekitarnya</option>
+                  <option value="Kalimantan dan Sekitarnya">Kalimantan dan Sekitarnya</option>
+                  <option value="Sulawesi dan Sekitarnya">Sulawesi dan Sekitarnya</option>
+                  <option value="Maluku dan Sekitarnya">Maluku dan Sekitarnya</option>
+                  <option value="Bali, Nusa Tenggara dan Sekitarnya">Bali, Nusa Tenggara dan Sekitarnya</option>
+                  <option value="Papua dan Sekitarnya">Papua dan Sekitarnya</option>
+                </select> 
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <label class="col-sm-2">Resep</label>
+              <div class="col-sm-10">
+                <textarea name="resep" class="form-control" rows="20" [(ngModel)]="resep.resep"></textarea>
+              </div>                        
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2">Gambar</label>
+              <div class="col-sm-10">
+                <input type="file" name="" id="" (change)="fileChange($event)">
+              </div>                        
+            </div>
+            
+            <div>
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="button" class="btn btn-warning" (click)="ResetForm(f)">Reset Form</button> 
+              </div>
+            </div>    
+        </form>
+      </div>      
+      
